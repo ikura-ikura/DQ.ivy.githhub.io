@@ -1,0 +1,38 @@
+.monster {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 6px;
+  background-color: #f8f8ff;
+}
+
+button {
+  background-color: #0078d7;
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+body {
+  font-family: 'Segoe UI', 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+}
+
+.monster {
+  max-width: 600px;
+  margin: 15px auto;
+}
+
+.drop-result {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.drop-result.hidden {
+  opacity: 0;
+}

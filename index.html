@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ドラゴンクエスト確率の書</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    h2,
+    h3 {
+      color: #2c3e50;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .monster {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 15px auto;
+      border-radius: 6px;
+      background-color: #f8f8ff;
+      max-width: 600px;
+    }
+
+    button {
+      background-color: #0078d7;
+      color: #fff;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+    }
+
+    .drop-result {
+      transition: opacity 0.3s ease-in-out;
+      opacity: 1;
+    }
+
+    .hidden {
+      opacity: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>ドラゴンクエスト確率の書</h1>
+    <p>全ドラクエシリーズのモンスターごとのレアドロップ確率を網羅！</p>
+  </header>
+
+  <main>
+    <h2>シリーズ一覧</h2>
+    <ul>
+      <li><a href="#dq2">ドラゴンクエストII</a></li>
+      <li><a href="#dq3">ドラゴンクエストIII</a></li>
+      <li><a href="#dq4">ドラゴンクエストIV</a></li>
+      <li><a href="#dq5">ドラゴンクエストV</a></li>
+      <li><a href="#dq6">ドラゴンクエストVI</a></li>
+      <li><a href="#dq7">ドラゴンクエストVII</a></li>
+      <li><a href="#dq8">ドラゴンクエストVIII</a></li>
+      <li><a href="#dq9">ドラゴンクエストIX</a></li>
+      <li><a href="#dq10">ドラゴンクエストX</a></li>
+      <li><a href="#dq11">ドラゴンクエストXI</a></li>
+    </ul>
+
+
+    </section>
+
+    <section id="dq2">
+      <h3>ドラゴンクエストIIのモンスター</h3>
+      <div class="monster">
+        <h4>じごくのつかい</h4>
+        <p>レアドロップ: <strong>まどうしのつえ</strong>（6.25%）</p>
+        <button aria-label="じごくのつかいのドロップを試す" onclick="tryDrop('じごくのつかい', 0.0625)">ドロップを試す！</button>
+        <p id="result-じごくのつかい" class="drop-result"></p>
+      </div>
+      <div class="monster">
+        <h4>アトラス</h4>
+        <p>レアドロップ: <strong>アトラス</strong>（0.78%）</p>
+        <button aria-label="アトラスのドロップを試す" onclick="tryDrop('アトラス', 0.0078)">ドロップを試す！</button>
+        <p id="result-アトラス" class="drop-result"></p>
+      </div>
+    </section>
+
+    <!-- DQ III -->
+    <section id="dq3">
+      <h3>ドラゴンクエストIIIのモンスター</h3>
+      <div class="monster">
+        <h4>くさったしたい</h4>
+        <p>レアドロップ: <strong>どくけしそう</strong>（12%）</p>
+        <button aria-label="くさったしたいのドロップを試す" onclick="tryDrop('くさったしたい', 0.12)">ドロップを試す！</button>
+        <p id="result-くさったしたい" class="drop-result"></p>
+      </div>
+    </section>
+
+    <!-- DQ IV -->
+    <section id="dq4">
+      <h3>ドラゴンクエストIVのモンスター</h3>
+      <div class="monster">
+        <h4>エビルプリースト</h4>
+        <p>レアドロップ: <strong>まほうのせいすい</strong>（5%）</p>
+        <button aria-label="エビルプリーストのドロップを試す" onclick="tryDrop('エビルプリースト', 0.05)">ドロップを試す！</button>
+        <p id="result-エビルプリースト" class="drop-result"></p>
+      </div>
+    </section>
+
+    <!-- DQ V -->
+    <section id="dq5">
+      <h3>ドラゴンクエストVのモンスター</h3>
+      <div class="monster">
+        <h4>キラーパンサー</h4>
+        <p>レアドロップ: <strong>いのちのきのみ</strong>（8%）</p>
+        <button aria-label="キラーパンサーのドロップを試す" onclick="tryDrop('キラーパンサー', 0.08)">ドロップを試す！</button>
+        <p id="result-キラーパンサー" class="drop-result"></p>
+      </div>
+    </section>
+
+    <!-- DQ VI -->
+    <section id="dq6">
+      <h3>ドラゴンクエストVIのモンスター</h3>
+      <div class="monster">
+        <h4>ホイミスライム</h4>
+        <p>レアドロップ: <strong>せいすい</strong>（10%）</p>
+        <button aria-label="ホイミスライムのドロップを試す" onclick="tryDrop('ホイミスライム', 0.10)">ドロップを試す！</button>
+        <p id="result-ホイミスライム" class="drop-result"></p>
+      </div>
+    </section>
+
+    <!-- DQ VII -->
+    <section id="dq7">
+      <h3>ドラゴンクエストVIIのモンスター</h3>
+      <div class="monster">
+        <h4>プラチナキング</h4>
+        <p>レアドロップ: <strong>プラチナソード</strong>（1%）</p>
+        <button aria-label="プラチナキングのドロップを試す" onclick="tryDrop('プラチナキング', 0.01)">ドロップを試す！</button>
+        <p id="result-プラチナキング" class="drop-result"></p>
+      </div>
+    </section>
+
+    <!-- DQ VIII -->
+    <section id="dq8">
+      <h3>ドラゴンクエストVIIIのモンスター</h3>
+      <div class="monster">
+        <h4>なげきの亡霊</h4>
+        <p>レアドロップ: <strong>まもりのたね</strong>（6%）</p>
+        <button aria-label="なげきの亡霊のドロップを試す" onclick="tryDrop('なげきの亡霊', 0.06)">ドロップを試す！</button>
+        <p id="result-なげきの亡霊" class="drop-result"></p>
+      </div>
+    </section>
+
+    <!-- DQ IX -->
+    <section id="dq9">
+      <h3>ドラゴンクエストIXのモンスター</h3>
+      <div class="monster">
+        <h4>メタルキング</h4>
+        <p>レアドロップ: <strong>メタルのかけら</strong>（4%）</p>
+        <button aria-label="メタルキングのドロップを試す" onclick="tryDrop('メタルキング', 0.04)">ドロップを試す！</button>
+        <p id="result-メタルキング" class="drop-result"></p>
+      </div>
+    </section>
+
+    <!-- DQ X -->
+    <section id="dq10">
+      <h3>ドラゴンクエストXのモンスター</h3>
+      <div class="monster">
+        <h4>バザックス</h4>
+        <p>レアドロップ: <strong>まじゅうの皮</strong>（7%）</p>
+        <button aria-label="バザックスのドロップを試す" onclick="tryDrop('バザックス', 0.07)">ドロップを試す！</button>
+        <p id="result-バザックス" class="drop-result"></p>
+      </div>
+    </section>
+
+    <!-- DQ XI -->
+    <section id="dq11">
+      <h3>ドラゴンクエストXIのモンスター</h3>
+      <div class="monster">
+        <h4>ブラウニー・邪</h4>
+        <p>レアドロップ: <strong>ちからのたね</strong>（0.4%）</p>
+        <button aria-label="ブラウニー・邪のドロップを試す" onclick="tryDrop('ブラウニー・邪', 0.004)">ドロップを試す！</button>
+        <p id="result-ブラウニー・邪" class="drop-result"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ドラゴンクエスト確率の書</p>
+  </footer>
+
+  <!-- 🔊 効果音の読み込み -->
+  <audio id="drop-sound" src="/宝箱を開ける.mp3" preload="auto"></audio>
+
+  <script>
+    function tryDrop(monsterName, dropRate) {
+      const resultId = "result-" + monsterName;
+      const resultElement = document.getElementById(resultId);
+      const sound = document.getElementById("drop-sound");
+
+      resultElement.classList.add("hidden");
+
+      setTimeout(() => {
+        const rand = Math.random();
+        let result;
+
+        if (rand < dropRate) {
+          result = `🎉 ${monsterName} はアイテムをドロップした！`;
+          sound.currentTime = 0; // リセット（連打対応）
+          sound.play();          // 🔊 サウンド再生
+        } else {
+          result = `😢 ${monsterName} は何も落とさなかった…`;
+        }
+
+        resultElement.textContent = result;
+        resultElement.classList.remove("hidden");
+      }, 150);
+    }
+  </script>
+
+</body>
+
+</html>
