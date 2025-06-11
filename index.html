@@ -6,6 +6,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ドラゴンクエスト確率の書</title>
   <style>
+    .series-list li {
+  background: linear-gradient(to bottom right, #f5ecd7, #e8dcb5);
+  border: 1px solid #d2b48c;
+  padding: 10px 16px;
+  margin: 8px 0;
+  border-radius: 12px;
+  list-style: none;
+  font-weight: bold;
+  font-family: 'Georgia', 'Noto Serif JP', serif;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  text-align: center;
+}
+
+.series-list li:hover {
+  transform: scale(1.02);
+  background: linear-gradient(to bottom right, #fdf6e3, #efe2c0);
+}
+
+.series-list a {
+  color: #5c432c;
+  text-decoration: none;
+}
+
+.series-list a:hover {
+  text-decoration: underline;
+}
+
+
+
+    body {
+  background-image: url('img/DQ背景素材.jpg'); /* 高解像度画像に変更 */
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% auto; /* 横幅100%、縦は比率維持 */
+  background-attachment: fixed;
+  background-color: #1a1a1a; /* 背景の補完色 */
+}
+
+
+
     body {
       font-family: 'Segoe UI', 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
       line-height: 1.6;
@@ -29,6 +70,23 @@
     h3 {
       color: #2c3e50;
     }
+
+    h2,
+    h3 {
+  background: linear-gradient(to bottom, #3b3b3b, #1e1e1e); /* 洞窟の暗がり */
+  color: #f0f0f0; /* 明るい文字で読みやすく */
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 2px solid #555; /* 石の縁取り */
+  text-align: center;
+  max-width: 600px;
+  margin: 30px auto 16px auto;
+  font-family: 'BIZ UDゴシック', 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* 立体感 */
+  letter-spacing: 1px;
+  
+}
+
 
     ul {
       padding-left: 20px;
@@ -81,9 +139,22 @@
     <p>全ドラクエシリーズのモンスターごとのレアドロップ確率を網羅！</p>
   </header>
 
+  <section
+    style="background-color: rgba(255, 255, 255, 0.85); padding: 20px; margin: 0; font-family: 'Noto Sans JP', sans-serif;">
+    <p>
+      『ドラゴンクエスト』（<strong>DRAGON
+        QUEST</strong>）は、1986年（昭和61年）5月27日にエニックス（現：スクウェア・エニックス）より発売された<br>
+        ファミリーコンピュータ（ファミコン、FC）用ロールプレイングゲーム。
+      通称は『ドラゴンクエストI』（ドラゴンクエストワン）『ドラクエ1』。<br>
+      キャッチコピーは「<em>今、新しい伝説が生まれようとしている</em>」。<br><br>
+      ここではそんなドラゴンクエストにおけるさまざまなレアドロップについて追究していくぞ！
+    </p>
+  </section>
+
+
   <main>
     <h2>シリーズ一覧</h2>
-    <ul>
+    <ul class="series-list">
       <li><a href="#dq2">ドラゴンクエストII</a></li>
       <li><a href="#dq3">ドラゴンクエストIII</a></li>
       <li><a href="#dq4">ドラゴンクエストIV</a></li>
@@ -139,6 +210,13 @@
         <p>レアドロップ: <strong>いのちのきのみ</strong>（8%）</p>
         <button aria-label="キラーパンサーのドロップを試す" onclick="tryDrop('キラーパンサー', 0.08)">ドロップを試す！</button>
         <p id="result-キラーパンサー" class="drop-result"></p>
+      </div>
+
+      <div class="monster">
+        <h4>ジャミ</h4>
+        <p>レアドロップ: <strong>ちいさなメダル</strong>（0.02%）</p>
+        <button aria-label="ジャミのドロップを試す" onclick="tryDrop('ジャミ', 0.00025)">ドロップを試す！</button>
+        <p id="result-ジャミ" class="drop-result"></p>
       </div>
     </section>
 
@@ -223,23 +301,18 @@
       const resultElement = document.getElementById(resultId);
       const sound = document.getElementById("drop-sound");
 
-      resultElement.classList.add("hidden");
+      const rand = Math.random();
+      let result;
 
-      setTimeout(() => {
-        const rand = Math.random();
-        let result;
+      if (rand < dropRate) {
+        result = `🎉 ${monsterName} はアイテムをドロップした！`;
+        sound.currentTime = 0;
+        sound.play();
+      } else {
+        result = `😢 ${monsterName} は何も落とさなかった…`;
+      }
 
-        if (rand < dropRate) {
-          result = `🎉 ${monsterName} はアイテムをドロップした！`;
-          sound.currentTime = 0; // リセット（連打対応）
-          sound.play();          // 🔊 サウンド再生
-        } else {
-          result = `😢 ${monsterName} は何も落とさなかった…`;
-        }
-
-        resultElement.textContent = result;
-        resultElement.classList.remove("hidden");
-      }, 150);
+      resultElement.textContent = result;
     }
   </script>
 
