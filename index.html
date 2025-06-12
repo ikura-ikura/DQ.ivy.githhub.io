@@ -1,3 +1,13 @@
+main {
+position: relative;
+z-index: 2; /* 帯より前に表示 */
+max-width: 800px;
+margin: 0 auto;
+padding: 20px;
+background-color: rgba(255, 255, 255, 0.85); /* 読みやすさ向上 */
+border-radius: 8px;
+}
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -7,52 +17,44 @@
   <title>ドラゴンクエスト確率の書</title>
   <style>
     .series-list li {
-  background: linear-gradient(to bottom right, #f5ecd7, #e8dcb5);
-  border: 1px solid #d2b48c;
-  padding: 10px 16px;
-  margin: 8px 0;
-  border-radius: 12px;
-  list-style: none;
-  font-weight: bold;
-  font-family: 'Georgia', 'Noto Serif JP', serif;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, background-color 0.3s ease;
-  text-align: center;
-}
+      background: linear-gradient(to bottom right, #f5ecd7, #e8dcb5);
+      border: 1px solid #d2b48c;
+      padding: 10px 16px;
+      margin: 8px 0;
+      border-radius: 12px;
+      list-style: none;
+      font-weight: bold;
+      font-family: 'Georgia', 'Noto Serif JP', serif;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease, background-color 0.3s ease;
+      text-align: center;
+    }
 
-.series-list li:hover {
-  transform: scale(1.02);
-  background: linear-gradient(to bottom right, #fdf6e3, #efe2c0);
-}
+    .series-list li:hover {
+      transform: scale(1.02);
+      background: linear-gradient(to bottom right, #fdf6e3, #efe2c0);
+    }
 
-.series-list a {
-  color: #5c432c;
-  text-decoration: none;
-}
+    .series-list a {
+      color: #5c432c;
+      text-decoration: none;
+    }
 
-.series-list a:hover {
-  text-decoration: underline;
-}
-
-
+    .series-list a:hover {
+      text-decoration: underline;
+    }
 
     body {
-  background-image: url('img/DQ背景素材.jpg'); /* 高解像度画像に変更 */
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: 100% auto; /* 横幅100%、縦は比率維持 */
-  background-attachment: fixed;
-  background-color: #1a1a1a; /* 背景の補完色 */
-}
-
-
-
-    body {
+      background-image: url('img/DQ背景素材.jpg');
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: 90% auto;
+      background-attachment: fixed;
+      background-color: #1a1a1a;
       font-family: 'Segoe UI', 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
       line-height: 1.6;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
     }
 
     header {
@@ -68,25 +70,18 @@
 
     h2,
     h3 {
-      color: #2c3e50;
+      background: linear-gradient(to bottom, #3b3b3b, #1e1e1e);
+      color: #f0f0f0;
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: 2px solid #555;
+      text-align: center;
+      max-width: 600px;
+      margin: 30px auto 16px auto;
+      font-family: 'BIZ UDゴシック', 'Segoe UI', sans-serif;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+      letter-spacing: 1px;
     }
-
-    h2,
-    h3 {
-  background: linear-gradient(to bottom, #3b3b3b, #1e1e1e); /* 洞窟の暗がり */
-  color: #f0f0f0; /* 明るい文字で読みやすく */
-  padding: 12px 20px;
-  border-radius: 8px;
-  border: 2px solid #555; /* 石の縁取り */
-  text-align: center;
-  max-width: 600px;
-  margin: 30px auto 16px auto;
-  font-family: 'BIZ UDゴシック', 'Segoe UI', sans-serif;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* 立体感 */
-  letter-spacing: 1px;
-  
-}
-
 
     ul {
       padding-left: 20px;
@@ -102,7 +97,7 @@
     }
 
     button {
-      background-color: #0078d7;
+      background-color: #06b609;
       color: #fff;
       padding: 6px 12px;
       border: none;
@@ -111,7 +106,7 @@
     }
 
     button:hover {
-      background-color: #005fa3;
+      background-color: #23f92e;
     }
 
     footer {
@@ -134,23 +129,19 @@
 </head>
 
 <body>
+
   <header>
     <h1>ドラゴンクエスト確率の書</h1>
     <p>全ドラクエシリーズのモンスターごとのレアドロップ確率を網羅！</p>
   </header>
 
-  <section
-    style="background-color: rgba(255, 255, 255, 0.85); padding: 20px; margin: 0; font-family: 'Noto Sans JP', sans-serif;">
+  <section style="background-color: rgba(255, 255, 255, 0.85); padding: 20px;">
     <p>
-      『ドラゴンクエスト』（<strong>DRAGON
-        QUEST</strong>）は、1986年（昭和61年）5月27日にエニックス（現：スクウェア・エニックス）より発売された<br>
-        ファミリーコンピュータ（ファミコン、FC）用ロールプレイングゲーム。
-      通称は『ドラゴンクエストI』（ドラゴンクエストワン）『ドラクエ1』。<br>
-      キャッチコピーは「<em>今、新しい伝説が生まれようとしている</em>」。<br><br>
-      ここではそんなドラゴンクエストにおけるさまざまなレアドロップについて追究していくぞ！
+      『ドラゴンクエスト』（<strong>DRAGON QUEST</strong>）は、1986年5月27日にエニックスより発売された<br>
+      ファミリーコンピュータ用RPG。通称『ドラクエ』シリーズ。<br><br>
+      ここではそんなドラクエシリーズにおけるレアドロップ確率についてまとめています！
     </p>
   </section>
-
 
   <main>
     <h2>シリーズ一覧</h2>
@@ -167,15 +158,16 @@
       <li><a href="#dq11">ドラゴンクエストXI</a></li>
     </ul>
 
+    <!-- 各シリーズとモンスターの情報（略） -->
+    <!-- DQ II〜XI 各モンスターのブロックを元のコード通りに記述してください -->
 
-    </section>
-
+    <!-- 以下は例：DQ2のじごくのつかいのみ -->
     <section id="dq2">
       <h3>ドラゴンクエストIIのモンスター</h3>
       <div class="monster">
         <h4>じごくのつかい</h4>
         <p>レアドロップ: <strong>まどうしのつえ</strong>（6.25%）</p>
-        <button aria-label="じごくのつかいのドロップを試す" onclick="tryDrop('じごくのつかい', 0.0625)">ドロップを試す！</button>
+        <button aria-label="じごくのつかいのドロップを試す" onclick="tryDrop('じごくのつかい', 0.0625)">ドロップ10連！</button>
         <p id="result-じごくのつかい" class="drop-result"></p>
       </div>
     </section>
@@ -186,7 +178,7 @@
       <div class="monster">
         <h4>くさったしたい</h4>
         <p>レアドロップ: <strong>どくけしそう</strong>（12%）</p>
-        <button aria-label="くさったしたいのドロップを試す" onclick="tryDrop('くさったしたい', 0.12)">ドロップを試す！</button>
+        <button aria-label="くさったしたいのドロップを試す" onclick="tryDrop('くさったしたい', 0.12)">ドロップ10連！</button>
         <p id="result-くさったしたい" class="drop-result"></p>
       </div>
     </section>
@@ -197,7 +189,7 @@
       <div class="monster">
         <h4>エビルプリースト</h4>
         <p>レアドロップ: <strong>まほうのせいすい</strong>（5%）</p>
-        <button aria-label="エビルプリーストのドロップを試す" onclick="tryDrop('エビルプリースト', 0.05)">ドロップを試す！</button>
+        <button aria-label="エビルプリーストのドロップを試す" onclick="tryDrop('エビルプリースト', 0.05)">ドロップ10連！</button>
         <p id="result-エビルプリースト" class="drop-result"></p>
       </div>
     </section>
@@ -208,14 +200,14 @@
       <div class="monster">
         <h4>キラーパンサー</h4>
         <p>レアドロップ: <strong>いのちのきのみ</strong>（8%）</p>
-        <button aria-label="キラーパンサーのドロップを試す" onclick="tryDrop('キラーパンサー', 0.08)">ドロップを試す！</button>
+        <button aria-label="キラーパンサーのドロップを試す" onclick="tryDrop('キラーパンサー', 0.08)">ドロップ10連！</button>
         <p id="result-キラーパンサー" class="drop-result"></p>
       </div>
 
       <div class="monster">
         <h4>ジャミ</h4>
         <p>レアドロップ: <strong>ちいさなメダル</strong>（0.02%）</p>
-        <button aria-label="ジャミのドロップを試す" onclick="tryDrop('ジャミ', 0.00025)">ドロップを試す！</button>
+        <button aria-label="ジャミのドロップを試す" onclick="tryDrop('ジャミ', 0.0002)">ドロップ10連！</button>
         <p id="result-ジャミ" class="drop-result"></p>
       </div>
     </section>
@@ -226,7 +218,7 @@
       <div class="monster">
         <h4>ホイミスライム</h4>
         <p>レアドロップ: <strong>せいすい</strong>（10%）</p>
-        <button aria-label="ホイミスライムのドロップを試す" onclick="tryDrop('ホイミスライム', 0.10)">ドロップを試す！</button>
+        <button aria-label="ホイミスライムのドロップを試す" onclick="tryDrop('ホイミスライム', 0.10)">ドロップ10連！</button>
         <p id="result-ホイミスライム" class="drop-result"></p>
       </div>
     </section>
@@ -237,7 +229,7 @@
       <div class="monster">
         <h4>プラチナキング</h4>
         <p>レアドロップ: <strong>プラチナソード</strong>（1%）</p>
-        <button aria-label="プラチナキングのドロップを試す" onclick="tryDrop('プラチナキング', 0.01)">ドロップを試す！</button>
+        <button aria-label="プラチナキングのドロップを試す" onclick="tryDrop('プラチナキング', 0.01)">ドロップ10連！</button>
         <p id="result-プラチナキング" class="drop-result"></p>
       </div>
     </section>
@@ -248,7 +240,7 @@
       <div class="monster">
         <h4>なげきの亡霊</h4>
         <p>レアドロップ: <strong>まもりのたね</strong>（6%）</p>
-        <button aria-label="なげきの亡霊のドロップを試す" onclick="tryDrop('なげきの亡霊', 0.06)">ドロップを試す！</button>
+        <button aria-label="なげきの亡霊のドロップを試す" onclick="tryDrop('なげきの亡霊', 0.06)">ドロップ10連！</button>
         <p id="result-なげきの亡霊" class="drop-result"></p>
       </div>
     </section>
@@ -259,7 +251,7 @@
       <div class="monster">
         <h4>メタルキング</h4>
         <p>レアドロップ: <strong>メタルのかけら</strong>（4%）</p>
-        <button aria-label="メタルキングのドロップを試す" onclick="tryDrop('メタルキング', 0.04)">ドロップを試す！</button>
+        <button aria-label="メタルキングのドロップを試す" onclick="tryDrop('メタルキング', 0.04)">ドロップ10連！</button>
         <p id="result-メタルキング" class="drop-result"></p>
       </div>
     </section>
@@ -270,7 +262,7 @@
       <div class="monster">
         <h4>バザックス</h4>
         <p>レアドロップ: <strong>まじゅうの皮</strong>（7%）</p>
-        <button aria-label="バザックスのドロップを試す" onclick="tryDrop('バザックス', 0.07)">ドロップを試す！</button>
+        <button aria-label="バザックスのドロップを試す" onclick="tryDrop('バザックス', 0.07)">ドロップ10連！</button>
         <p id="result-バザックス" class="drop-result"></p>
       </div>
     </section>
@@ -281,41 +273,59 @@
       <div class="monster">
         <h4>ブラウニー・邪</h4>
         <p>レアドロップ: <strong>ちからのたね</strong>（0.4%）</p>
-        <button aria-label="ブラウニー・邪のドロップを試す" onclick="tryDrop('ブラウニー・邪', 0.004)">ドロップを試す！</button>
+        <button aria-label="ブラウニー・邪のドロップを試す" onclick="tryDrop('ブラウニー・邪', 0.004)">ドロップ10連！</button>
         <p id="result-ブラウニー・邪" class="drop-result"></p>
       </div>
     </section>
-
+    <!-- 他のモンスターセクションは元のままでOK -->
   </main>
 
   <footer>
     <p>&copy; 2025 ドラゴンクエスト確率の書</p>
   </footer>
 
-  <!-- 🔊 効果音の読み込み -->
+  <!-- 効果音 -->
   <audio id="drop-sound" src="/宝箱を開ける.mp3" preload="auto"></audio>
 
+  <!-- JavaScript（10連ドロップ対応） -->
   <script>
+    const dropStats = {};
+
     function tryDrop(monsterName, dropRate) {
       const resultId = "result-" + monsterName;
       const resultElement = document.getElementById(resultId);
       const sound = document.getElementById("drop-sound");
 
-      const rand = Math.random();
-      let result;
-
-      if (rand < dropRate) {
-        result = `🎉 ${monsterName} はアイテムをドロップした！`;
-        sound.currentTime = 0;
-        sound.play();
-      } else {
-        result = `😢 ${monsterName} は何も落とさなかった…`;
+      if (!dropStats[monsterName]) {
+        dropStats[monsterName] = { attempts: 0, successes: 0 };
       }
 
-      resultElement.textContent = result;
+      let results = "";
+      let dropCount = 0;
+
+      for (let i = 0; i < 10; i++) {
+        dropStats[monsterName].attempts++;
+        const rand = Math.random();
+
+        if (rand < dropRate) {
+          dropStats[monsterName].successes++;
+          dropCount++;
+          results += `🎉 ${i + 1}回目: ドロップ！<br>`;
+        } else {
+          results += `😢 ${i + 1}回目: なし<br>`;
+        }
+      }
+
+      if (dropCount > 0) {
+        sound.currentTime = 0;
+        sound.play();
+      }
+
+      resultElement.innerHTML = `
+        ${results}
+        <hr>
+        🧮 累計試行回数: ${dropStats[monsterName].attempts} 回<br>
+        ✅ 累計ドロップ成功: ${dropStats[monsterName].successes} 回
+      `;
     }
   </script>
-
-</body>
-
-</html>
